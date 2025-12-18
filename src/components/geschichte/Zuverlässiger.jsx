@@ -23,12 +23,12 @@ const Zuverlässiger = () => {
           <Image
             src={tag1}
             alt="tag1"
-            className="absolute -left-5 lg:-left-10 top-1/4 lg:top-50w-auto"
+            className="absolute -left-5 hidden md:block lg:-left-10 top-1/4 lg:top-50w-auto"
           />
           <Image
             src={tag2}
             alt="tag2"
-            className="absolute -right-5 bottom-1/4 lg:bottom-50 w-auto"
+            className="absolute -right-5 hidden md:block bottom-1/4 lg:bottom-50 w-auto"
           />
         </div>
       </div>

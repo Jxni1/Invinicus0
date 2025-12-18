@@ -58,7 +58,7 @@ const Vertrauen = () => {
           <Image
             src={tag3}
             alt="tag3"
-            className="absolute top-10 lg:top-20 left-10 lg:left-20 w-16 lg:w-auto"
+            className="absolute top-10 hidden lg:block lg:top-20 left-10 lg:left-20 w-16 lg:w-auto"
           />
         </div>
       </div>

@@ -41,7 +41,7 @@ const Page = () => {
             id="calendly-embed"
             className="calendly-inline-widget w-full"
             data-url="https://calendly.com/blendelezii04/kaegi"
-            style={{ minWidth: "320px", height: "700px" }}
+            style={{ minWidth: "320px", height: "1100px" }}
           ></div>
         </div>
       </div>
