@@ -5,7 +5,7 @@ import incon from "../../../public/images/incon.svg";
 import Image from "next/image";
 import upload from "../../../public/images/upload.svg";
 
-// ✅ Define FileUploadArea OUTSIDE the main component
+// FileUploadArea component
 const FileUploadArea = ({
   type,
   label,
@@ -38,7 +38,7 @@ const FileUploadArea = ({
         Wählen Sie eine Datei aus oder ziehen Sie sie per Drag & Drop hierher.
       </p>
       <p className="text-gray-400 text-sm mb-4">
-        JPEG, PNG, PDG-Formate, bis zu 50 MB
+        JPEG, PNG, PDF-Formate, bis zu 50 MB
       </p>
       {files[type] && (
         <p className="text-green-600 text-sm mb-3">✓ {files[type]?.name}</p>
@@ -46,6 +46,7 @@ const FileUploadArea = ({
       <input
         ref={fileInputRefs[type]}
         type="file"
+        name={type}
         className="hidden"
         accept=".jpg,.jpeg,.png,.pdf,.mp4"
         onChange={(e) => handleFileChange(e, type)}
@@ -67,6 +68,7 @@ export default function BewerbungsFormular1() {
     nachname: "",
     email: "",
     telefon: "",
+    stellenbezeichnung: "", // ✅ Added to state
   });
 
   const [files, setFiles] = useState({
@@ -80,6 +82,9 @@ export default function BewerbungsFormular1() {
     motivationsschreiben: false,
     andereDateien: false,
   });
+
+  const [status, setStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const lebenslaufRef = useRef(null);
   const motivationsschreibenRef = useRef(null);
@@ -113,6 +118,9 @@ export default function BewerbungsFormular1() {
       const file = e.dataTransfer.files[0];
       if (validateFile(file)) {
         setFiles({ ...files, [type]: file });
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(file);
+        fileInputRefs[type].current.files = dataTransfer.files;
       }
     }
   };
@@ -150,25 +158,76 @@ export default function BewerbungsFormular1() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setStatus(null);
 
-    if (!formData.vorname || !formData.nachname || !formData.email) {
+    // Added check for stellenbezeichnung if required
+    if (
+      !formData.vorname ||
+      !formData.nachname ||
+      !formData.email ||
+      !formData.stellenbezeichnung
+    ) {
       alert("Bitte füllen Sie alle erforderlichen Felder aus");
+      setLoading(false);
       return;
     }
 
     const submitData = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
-      submitData.append(key, value);
-    });
+    submitData.append("vorname", formData.vorname);
+    submitData.append("nachname", formData.nachname);
+    submitData.append("email", formData.email);
+    submitData.append("telefon", formData.telefon);
+    submitData.append("stellenbezeichnung", formData.stellenbezeichnung); // ✅ Added to submission
 
+    // Add files
     Object.entries(files).forEach(([key, file]) => {
       if (file) {
         submitData.append(key, file);
       }
     });
 
-    console.log("Form submitted:", { formData, files });
-    alert("Bewerbung erfolgreich eingereicht!");
+    try {
+      const res = await fetch("/api/send-application", {
+        method: "POST",
+        body: submitData,
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setStatus({
+          type: "success",
+          message: "Bewerbung erfolgreich eingereicht!",
+        });
+        // Reset form
+        setFormData({
+          vorname: "",
+          nachname: "",
+          email: "",
+          telefon: "",
+          stellenbezeichnung: "",
+        });
+        setFiles({
+          lebenslauf: null,
+          motivationsschreiben: null,
+          andereDateien: null,
+        });
+        Object.values(fileInputRefs).forEach((ref) => {
+          if (ref.current) ref.current.value = "";
+        });
+      } else {
+        throw new Error(data.error || "Failed to send application");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus({
+        type: "error",
+        message: "Es gab einen Fehler beim Senden Ihrer Bewerbung.",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -249,6 +308,24 @@ export default function BewerbungsFormular1() {
           </div>
         </div>
 
+        {/* ✅ Corrected Input Field for Stellenbezeichnung */}
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mb-6">
+          <div>
+            <label className="block text-sm font-light text-gray-600 mb-2">
+              Stellenbezeichnung
+            </label>
+            <input
+              type="text"
+              name="stellenbezeichnung"
+              value={formData.stellenbezeichnung}
+              onChange={handleInputChange}
+              placeholder="Stellenbezeichnung"
+              className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              required
+            />
+          </div>
+        </div>
+
         <FileUploadArea
           type="lebenslauf"
           label="Hochladen: Lebenslauf"
@@ -280,8 +357,26 @@ export default function BewerbungsFormular1() {
           handleFileChange={handleFileChange}
         />
 
-        <button className="flex flex-row items-center justify-start gap-3 bg-[#0069D1] px-5 py-3 rounded-full mt-10">
-          <h1 className="text-white uppercase">EINREICHEN</h1>
+        {status && (
+          <div
+            className={`p-4 rounded-lg mb-4 ${
+              status.type === "success"
+                ? "bg-green-100 text-green-800"
+                : "bg-red-100 text-red-800"
+            }`}
+          >
+            {status.message}
+          </div>
+        )}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="flex flex-row items-center justify-start gap-3 bg-[#0069D1] px-5 py-3 rounded-full mt-10 hover:bg-[#005bb5] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <h1 className="text-white uppercase">
+            {loading ? "WIRD GESENDET..." : "EINREICHEN"}
+          </h1>
           <Image src={incon} alt="arrow1" />
         </button>
       </form>

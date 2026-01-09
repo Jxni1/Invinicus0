@@ -183,11 +183,11 @@ const Footer = () => {
               Für Sie erreichbar
             </h1>
             <p className="text-[#121921] text-[18px]">
-              Montag bis Freitag: 08:00 Uhr is 12:00 Uhr und 13:00 Uhr bis 17:00
-              Uhr. Für alle anderen Uhrzeiten und Wochentage kontaktieren Sie
-              uns bitte per E-Mail oder über das Kontaktformular. Ziele, Wünsche
-              und Lebensphasen anpassen. Persönlich. Transparent.
-              Zukunftssicher.
+              Montag bis Freitag: 08:00 Uhr bis 12:00 Uhr und 13:00 Uhr bis
+              17:00 Uhr. <br />
+              <br />
+              Für alle anderen Uhrzeiten und Wochentage kontaktieren Sie uns
+              bitte per E-Mail oder über das Kontaktformular.
             </p>
             <div>
               <Link href="/kontakt">
@@ -214,10 +214,10 @@ const Footer = () => {
                       Kontaktnummer
                     </h1>
                     <a
-                      href="tel:+411234567"
+                      href="tel:++41 78 401 92 90"
                       className="text-[#595E64] hover:underline"
                     >
-                      +41 12 345 67
+                      +41 78 401 92 90
                     </a>
                   </div>
                 </div>
@@ -230,10 +230,10 @@ const Footer = () => {
                       Support kontaktieren
                     </h1>
                     <a
-                      href="mailto:invinicus@gmail.com"
+                      href="mailto:info@invinicus.ch"
                       className="text-[#595E64] hover:underline"
                     >
-                      invinicus@gmail.com
+                      info@invinicus.ch
                     </a>
                   </div>
                 </div>

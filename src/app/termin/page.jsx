@@ -1,17 +1,26 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Script from "next/script";
 
 const Page = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    // Ensure Calendly script is loaded
-    if (window.Calendly) {
-      window.Calendly.initInlineWidget({
-        url: "https://calendly.com/blendelezii04/kaegi",
-        parentElement: document.getElementById("calendly-embed"),
-      });
-    }
+    // Check if Calendly is loaded
+    const checkCalendly = setInterval(() => {
+      if (window.Calendly) {
+        clearInterval(checkCalendly);
+        window.Calendly.initInlineWidget({
+          url: "https://calendly.com/invinicus-info/30min",
+          parentElement: document.getElementById("calendly-embed"),
+        });
+        // Hide loading after a short delay to ensure widget renders
+        setTimeout(() => setIsLoading(false), 800);
+      }
+    }, 100);
+
+    return () => clearInterval(checkCalendly);
   }, []);
 
   return (
@@ -20,6 +29,12 @@ const Page = () => {
       <Script
         src="https://assets.calendly.com/assets/external/widget.js"
         strategy="lazyOnload"
+        onLoad={() => {
+          // Additional fallback when script loads
+          if (window.Calendly) {
+            setTimeout(() => setIsLoading(false), 800);
+          }
+        }}
       />
 
       <div className="container mx-auto px-4 pt-32 md:pt-40 lg:pt-42">
@@ -35,12 +50,32 @@ const Page = () => {
           </h2>
         </div>
 
-        {/* Calendly Widget */}
-        <div className="max-w-5xl mx-auto">
+        {/* Calendly Widget Container */}
+        <div className="max-w-5xl mx-auto relative">
+          {/* Loading Screen */}
+          {isLoading && (
+            <div
+              className="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-lg"
+              style={{ minHeight: "1100px" }}
+            >
+              <div className="flex flex-col items-center gap-4">
+                {/* Spinner */}
+                <div className="w-12 h-12 border-4 border-[#B8E4FF] border-t-[#0069D1] rounded-full animate-spin"></div>
+                {/* Loading Text */}
+                <p className="text-[#5C7A84] text-lg font-medium">
+                  Kalender wird geladen...
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Calendly Widget */}
           <div
             id="calendly-embed"
-            className="calendly-inline-widget w-full"
-            data-url="https://calendly.com/blendelezii04/kaegi"
+            className={`calendly-inline-widget w-full transition-opacity duration-500 ${
+              isLoading ? "opacity-0" : "opacity-100"
+            }`}
+            data-url="https://calendly.com/invinicus-info/30min"
             style={{ minWidth: "320px", height: "1100px" }}
           ></div>
         </div>

@@ -31,9 +31,9 @@ const cardData = [
     image: photo22,
     icon: icon2000,
     icon2: icon2001,
-    title: "Kundenberater mit VBV - Zertifizierung (100%)",
+    title: "Karrierewechsler – Quereinsteiger",
     description:
-      "Für erfahrene Berater, die in einem digitalen Umfeld arbeiten, langfristige Kundenbeziehungen aufbauen und ihr eigenes Portfolio mit starker Markenunterstützung erweitern möchten.",
+      "Du bist neu im Finanzbereich? Kein Problem. Wir bieten umfassende Schulungen, klare Anleitungen und digitale Werkzeuge, damit du Schritt für Schritt mit der Beratung von Kunden beginnen kannst.",
   },
   {
     id: 3,
@@ -41,18 +41,18 @@ const cardData = [
     icon: icon3000,
     icon2: icon3001,
 
-    title: "Kundenberater mit VBV - Zertifizierung (100%)",
+    title: "Online-Kundenberater (100%)",
     description:
-      "Für erfahrene Berater, die in einem digitalen Umfeld arbeiten, langfristige Kundenbeziehungen aufbauen und ihr eigenes Portfolio mit starker Markenunterstützung erweitern möchten.",
+      "Konzentriere dich auf Online-Beratungen, Nachverfolgungen und digitalen Verkauf – ideal, wenn du gerne mit Menschen sprichst, mit KPIs arbeitest und Geschäfte aus der Ferne abschliesst.",
   },
   {
     id: 4,
     image: photo44,
     icon: icon4000,
     icon2: icon4001,
-    title: "Kundenberater mit VBV - Zertifizierung (100%)",
+    title: "Talentpool – Spontanbewerbung",
     description:
-      "Für erfahrene Berater, die in einem digitalen Umfeld arbeiten, langfristige Kundenbeziehungen aufbauen und ihr eigenes Portfolio mit starker Markenunterstützung erweitern möchten.",
+      "Noch keine passende Rolle? Sende uns deinen Lebenslauf und wir kontaktieren dich, wenn eine passende Gelegenheit verfügbar wird.",
   },
 ];
 

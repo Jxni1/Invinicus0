@@ -71,7 +71,7 @@ const Zuverlässiger = () => {
 
         {/* CTA Button */}
         <div className="flex flex-col items-start justify-between gap-4 w-full lg:w-auto">
-          <Link href="/dienstleistungen" className="w-full lg:w-auto">
+          <Link href="/termin" className="w-full lg:w-auto">
             <div className="flex flex-row items-center justify-center lg:justify-start gap-3 bg-[#0069D1] px-5 py-3 rounded-full mt-6 lg:mt-10 cursor-pointer group hover:bg-[#03A8E2] transition-all duration-300 hover:shadow-lg hover:shadow-[#0069D1]/30 hover:-translate-y-0.5 w-full lg:w-auto">
               <h1 className="text-white uppercase group-hover:tracking-wider transition-all duration-300 text-[14px] lg:text-[16px]">
                 JETZT PLANEN

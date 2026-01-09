@@ -96,7 +96,7 @@ const Beratung = () => {
 
       <div
         className="hidden lg:block relative mt-40"
-        style={{ height: `${services.length * 80}vh` }}
+        // style={{ height: `${services.length * 80}vh` }}
       >
         {services.map((service, index) => (
           <div
@@ -115,12 +115,17 @@ const Beratung = () => {
               <Image
                 src={service.image}
                 alt={service.title}
+                priority={index === 0 || index === 1} // Prioritize first 2 visible images
+                placeholder="blur"
+                quality={85}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className={`w-1/2 object-cover h-[600px] ${
                   service.imagePosition === "left"
                     ? "rounded-tl-[60px]"
                     : "rounded-br-[60px]"
                 }`}
               />
+
               <div className="w-1/2 p-10 flex flex-col items-start justify-between h-full gap-10">
                 <h1
                   className={`${
@@ -138,7 +143,7 @@ const Beratung = () => {
 
       <div
         className="lg:hidden relative mt-10"
-        style={{ height: `${services.length * 60}vh` }}
+        // style={{ height: `${services.length * 60}vh` }}
       >
         {services.map((service, index) => (
           <div

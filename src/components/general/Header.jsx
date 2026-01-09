@@ -66,7 +66,7 @@ const Header = () => {
           </Link>
           <Link href="/termin">
             <button className="text-white hover:shadow-lg border border-[#0069D1] bg-[#0069D1] px-5 py-3 lg:py-4 rounded-full transition-all">
-              Termin buchen
+              Termin vereinbaren
             </button>
           </Link>
         </div>
@@ -134,7 +134,7 @@ const Header = () => {
             </Link>
             <Link href="/termin" onClick={() => setIsMobileMenuOpen(false)}>
               <button className="w-full text-white font-medium bg-[#0069D1] border border-[#0069D1] px-4 py-3 rounded-full hover:shadow-md">
-                Termin buchen
+                Termin vereinbaren
               </button>
             </Link>
           </div>
