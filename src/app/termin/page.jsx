@@ -45,7 +45,7 @@ const Page = () => {
             Termin online.
           </h1>
           <h2 className="text-[#5C7A84] text-base sm:text-lg md:text-xl lg:text-[20px] mt-8 md:mt-5 text-center">
-            Vereinbare jetzt einfach deinen Termin - online oder telefonisch.
+            In wenigen Klicks zum Ziel.
           </h2>
         </div>
 

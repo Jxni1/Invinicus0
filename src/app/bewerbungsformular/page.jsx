@@ -8,8 +8,7 @@ import BewerbungsFormular1 from "../../components/kontakt/BewerbungsFormular1";
 const page = () => {
   const heroContent = {
     title: "Willkommen Bei Invinicus: Deine Reise Beginnt Hier.",
-    subtitle:
-      "Wir zeigen dir den Weg zu deiner Entwicklung | 20. Februar 2024 ",
+    subtitle: "Wir zeigen dir den Weg zu deiner Entwicklung  ",
     icon: uber8,
     iconAlt: "uber uns icon",
     popupImages: [pop15, pop16],
