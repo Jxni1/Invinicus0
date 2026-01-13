@@ -41,17 +41,16 @@ const Page = () => {
         {/* Heading Section */}
         <div className="max-w-5xl mx-auto mb-12 md:mb-16">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] text-center  leading-tight">
-            Vereinbare jetzt einfach deinen
-            <br className="hidden md:block" />
+            Vereinbare jetzt einfach deinen <br />
             Termin online.
           </h1>
-          <h2 className="text-[#5C7A84] text-base sm:text-lg md:text-xl lg:text-[20px] mt-4 md:mt-5 text-center">
+          <h2 className="text-[#5C7A84] text-base sm:text-lg md:text-xl lg:text-[20px] mt-8 md:mt-5 text-center">
             Vereinbare jetzt einfach deinen Termin - online oder telefonisch.
           </h2>
         </div>
 
         {/* Calendly Widget Container */}
-        <div className="max-w-5xl mx-auto relative">
+        <div className="max-w-5xl mx-auto relative mt-20 md:mt-0">
           {/* Loading Screen */}
           {isLoading && (
             <div

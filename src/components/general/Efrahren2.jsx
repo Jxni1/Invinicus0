@@ -111,7 +111,7 @@ const Efrahren2 = ({ content }) => {
         <Link href="/termin">
           <div className="flex flex-row items-center justify-start gap-3 bg-[#0069D1] px-5 py-3 rounded-full mt-10 cursor-pointer group hover:bg-[#03A8E2] transition-all duration-300 hover:shadow-lg hover:shadow-[#0069D1]/30 hover:-translate-y-0.5">
             <h1 className="text-white uppercase group-hover:tracking-wider transition-all duration-300">
-              JETZ PLANEN
+              Jetzt Bewerben
             </h1>
             <Image
               src={incon}
