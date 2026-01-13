@@ -38,7 +38,7 @@ const Einzigartig = () => {
 
           <div className="w-full bg-[#EDF5FA] relative p-3 rounded-lg flex flex-row items-center justify-between gap-4 sm:gap-8 overflow-hidden">
             <div className="shrink-0">
-              <Image src={man} alt="man" className="w-auto" />
+              <Image src={man} alt="man" className="w-auto" priority />
             </div>
 
             <div className="flex flex-col items-start justify-center gap-2 sm:gap-4">

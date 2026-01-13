@@ -150,7 +150,7 @@ const Beratung = () => {
             key={service.id}
             className={`sticky ${service.bgColor} rounded-tl-[40px] rounded-br-[40px] overflow-hidden shadow-lg`}
             style={{
-              top: `${80 + index * 55}px`,
+              top: `${80 + index * 10}px`,
               marginBottom: index < services.length - 1 ? "20px" : "0",
             }}
           >
