@@ -12,7 +12,7 @@ export default function TestimonialSection() {
   const testimonials = [
     {
       id: 1,
-      stars: 3,
+      stars: 5,
       title: "Endlich jemand, der zuhört!",
       text: "Ich fühlte mich vom ersten Gespräch an verstanden. Keine Standardlösung, sondern eine Versicherung, die wirklich zu meinem Leben passt.",
       name: "Emira Trifi",
