@@ -12,12 +12,12 @@ export default function TestimonialSection() {
   const testimonials = [
     {
       id: 1,
-      stars: 5,
+      stars: 3,
       title: "Endlich jemand, der zuhört!",
       text: "Ich fühlte mich vom ersten Gespräch an verstanden. Keine Standardlösung, sondern eine Versicherung, die wirklich zu meinem Leben passt.",
-      name: "Laura Meier",
-      role: "CEO at Miro",
-      image: image1,
+      name: "Emira Trifi",
+      role: "",
+      // image: image1,
       bgColor: "bg-[#effbfe]",
     },
     {
@@ -25,9 +25,9 @@ export default function TestimonialSection() {
       stars: 5,
       title: "Schnell, transparent und persönlich.",
       text: "Mein Anliegen wurde sofort bearbeitet – ohne Papierkram, ohne Stress. Ich wusste jederzeit, woran ich bin.",
-      name: "Sarah Baumann",
-      role: "Founder at Zira",
-      image: image2,
+      name: "Dejan Dimitrijevic",
+      role: "",
+      // image: image2,
       bgColor: "bg-[#fdf5fc]",
     },
     {
@@ -35,9 +35,9 @@ export default function TestimonialSection() {
       stars: 5,
       title: "Vertrauen, das bleibt.",
       text: "Nach einem Schadenfall wurde ich kompetent und freundlich begleitet. So stelle ich mir moderne Versicherung vor.",
-      name: "John Lee",
-      role: "CEO at Zoho",
-      image: image3,
+      name: "Kristina Janicijevic",
+      role: "",
+      // image: image3,
       bgColor: "bg-[#fffaf5]",
     },
     // {
@@ -148,11 +148,11 @@ export default function TestimonialSection() {
               </p>
 
               <div className="flex items-center gap-4 mt-auto">
-                <Image
+                {/* <Image
                   src={item.image}
                   alt={item.name}
                   className="w-12 h-12 rounded-full object-cover bg-gray-200"
-                />
+                /> */}
                 <div>
                   <p className="font-bold text-gray-900 text-sm">{item.name}</p>
                   <p className="text-gray-500 text-sm">{item.role}</p>
