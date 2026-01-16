@@ -45,15 +45,56 @@ const Kontaktieren = () => {
               className="fill-white transition-colors duration-300"
             />
           </svg>
-          <a href="https://www.google.com/maps/place/Schachenfeldstrasse+19,+8967+Widen,+Switzerland/@47.366008,8.364311,347m/data=!3m1!1e3!4m6!3m5!1s0x47900e115fdff74d:0x9ff0a67bfac2eefa!8m2!3d47.3661988!4d8.3640914!16s%2Fg%2F11m_gkj9vs?hl=en-US&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D">
+          <a href="https://www.google.com/maps/place/Schachenfeldstrasse+19,+8967+Widen,+Switzerland/@47.3661988,8.3640914,694m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47900e115fdff74d:0x9ff0a67bfac2eefa!8m2!3d47.3661988!4d8.3640914!16s%2Fg%2F11m_gkj9vs?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D">
+            <div className="flex flex-col items-center justify-between gap-2">
+              <h1 className="text-[#7A92A8] text-base md:text-lg font-semibold text-center group-hover:text-white transition-colors duration-300">
+                Postadresse
+              </h1>
+
+              <h1 className="text-[#5B6B7A] hover:underline text-sm md:text-base lg:text-[18px] text-center group-hover:text-white transition-colors duration-300 px-4">
+                Schachenfeldstrasse 19 <br />
+                8967 Widen
+              </h1>
+            </div>
+          </a>
+        </div>
+        <div className="group flex flex-col items-center justify-around py-6 md:py-4 bg-white w-full min-h-[180px] md:h-[200px] rounded-tr-[40px] rounded-bl-[40px] hover:bg-[#07133B] hover:text-white transition-colors duration-300 shadow-sm">
+          <svg
+            width="60"
+            height="60"
+            className="flex-shrink-0"
+            viewBox="0 0 60 60"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="30"
+              cy="30"
+              r="30"
+              className="fill-[#07133B] group-hover:fill-[#6FB9FE] transition-colors duration-300"
+            />
+            <path
+              d="M35.655 37.7251C33.7275 40.0951 31.9425 41.7751 31.5225 42.1576C31.1025 42.5401 30.5625 42.7501 30 42.7501C29.4375 42.7501 28.8975 42.5401 28.485 42.1576C28.065 41.7751 26.28 40.0951 24.345 37.7251C22.8 38.3551 21.75 39.2926 21.75 40.5001C21.75 42.9376 26.0025 44.2501 30 44.2501C33.9975 44.2501 38.25 42.9376 38.25 40.5001C38.25 39.2926 37.2 38.3551 35.655 37.7251Z"
+              className="fill-white transition-colors duration-300"
+            />
+            <path
+              d="M35.25 25.5C35.25 22.6055 32.8945 20.25 30 20.25C27.1055 20.25 24.75 22.6055 24.75 25.5C24.75 28.3945 27.1055 30.75 30 30.75C32.8945 30.75 35.25 28.3945 35.25 25.5ZM27.2197 28.2803C26.9268 27.9873 26.9268 27.5127 27.2197 27.2197L28.9395 25.5L27.2197 23.7803C26.9268 23.4873 26.9268 23.0127 27.2197 22.7197C27.5127 22.4268 27.9873 22.4268 28.2803 22.7197L30 24.4395L31.7197 22.7197C32.0127 22.4268 32.4873 22.4268 32.7803 22.7197C33.0732 23.0127 33.0732 23.4873 32.7803 23.7803L31.0605 25.5L32.7803 27.2197C33.0732 27.5126 33.0732 27.9872 32.7804 28.2801C32.5049 28.5557 32.0126 28.5731 31.7197 28.2803L30 26.5605C30 26.5605 28.2835 28.277 28.2803 28.2803C28.0052 28.5553 27.5116 28.5722 27.2197 28.2803Z"
+              className="fill-white transition-colors duration-300"
+            />
+            <path
+              d="M29.4932 41.053C29.7788 41.3138 30.2216 41.3135 30.5068 41.053C30.884 40.7065 39.75 32.4998 39.75 25.5C39.75 20.124 35.376 15.75 30 15.75C24.624 15.75 20.25 20.124 20.25 25.5C20.25 32.4998 29.116 40.7065 29.4932 41.053ZM23.25 25.5C23.25 21.7778 26.2778 18.75 30 18.75C33.7222 18.75 36.75 21.7778 36.75 25.5C36.75 29.2222 33.7222 32.25 30 32.25C26.2778 32.25 23.25 29.2222 23.25 25.5Z"
+              className="fill-white transition-colors duration-300"
+            />
+          </svg>
+          <a href="https://www.google.com/maps/place/Industriestrasse+109,+8957+Spreitenbach,+Switzerland/@47.4173181,8.3782491,693m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47900d9dedbe0e57:0xc317477485945206!8m2!3d47.4173181!4d8.3782491!16s%2Fg%2F11dxr_n09r?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D">
             <div className="flex flex-col items-center justify-between gap-2">
               <h1 className="text-[#7A92A8] text-base md:text-lg font-semibold text-center group-hover:text-white transition-colors duration-300">
                 Standort
               </h1>
 
               <h1 className="text-[#5B6B7A] hover:underline text-sm md:text-base lg:text-[18px] text-center group-hover:text-white transition-colors duration-300 px-4">
-                Schachenfeldstrasse 19, <br />
-                8967 Widen
+                Industriestrasse 109 <br />
+                8957 Spreitenbach
               </h1>
             </div>
           </a>

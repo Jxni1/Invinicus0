@@ -239,13 +239,23 @@ const Footer = () => {
                 </div>
 
                 {/* Address */}
-                <div className="flex flex-row items-center justify-between gap-5">
+                <div className="flex flex-row items-start justify-between gap-5">
                   <Image src={home} alt="Home" className="w-8 h-8" />
-                  <div className="flex flex-col items-start justify-between gap-1 px-5 border-l border-l-[#121921]">
-                    <a href="https://www.google.com/maps/place/Schachenfeldstrasse+19,+8967+Widen,+Switzerland/@47.366008,8.364311,347m/data=!3m1!1e3!4m6!3m5!1s0x47900e115fdff74d:0x9ff0a67bfac2eefa!8m2!3d47.3661988!4d8.3640914!16s%2Fg%2F11m_gkj9vs?hl=en-US&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D">
+                  <div className="flex flex-col items-start justify-between gap-3 px-5 border-l border-l-[#121921]">
+                    <a href="https://www.google.com/maps/place/Schachenfeldstrasse+19,+8967+Widen,+Switzerland/@47.3661988,8.3640914,694m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47900e115fdff74d:0x9ff0a67bfac2eefa!8m2!3d47.3661988!4d8.3640914!16s%2Fg%2F11m_gkj9vs?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D">
                       {" "}
                       <h1 className="font-medium text-[#595E64] hover:underline">
-                        Schachenfeldstrasse 19 <br /> 8967 Widen
+                        Postadresse: <br />
+                        Schachenfeldstrasse 19 <br />
+                        8967 Widen
+                      </h1>
+                    </a>
+                    <a href="https://www.google.com/maps/place/Industriestrasse+109,+8957+Spreitenbach,+Switzerland/@47.4173181,8.3782491,693m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47900d9dedbe0e57:0xc317477485945206!8m2!3d47.4173181!4d8.3782491!16s%2Fg%2F11dxr_n09r?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D">
+                      {" "}
+                      <h1 className="font-medium text-[#595E64] hover:underline">
+                        Standort: <br />
+                        Industriestrasse 109 <br />
+                        8957 Spreitenbach
                       </h1>
                     </a>
                   </div>
@@ -308,7 +318,12 @@ const Footer = () => {
           <div className="flex flex-row items-center justify-center w-full">
             <p className="text-[#121921] text-center text-sm md:text-base">
               Urheberrecht © {new Date().getFullYear()} Invinicus | Gestaltet
-              von Syntech Solutions AG
+              von{" "}
+              <Link href="https://www.syn-tech.ch/">
+                <span className="hover:text-[#1a2a40] hover:underline">
+                  Syntech Solutions AG
+                </span>
+              </Link>
             </p>
           </div>
         </div>
